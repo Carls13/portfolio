@@ -1,0 +1,77 @@
+.only-mobile {
+	display: none;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+header {
+	background-color: #ffffff;
+}
+
+.header-menu a {
+	padding: 10px;
+	margin-right: 25px;
+	text-align: center;
+	font-size: 20px;
+	color: black;
+	text-decoration: none !important;
+}
+
+.header-menu a:hover {
+	background-color: white;
+	color: #2A0D7C;
+	font-weight: bold;
+}
+
+.header-logo {
+	height: 20vh;
+	display: block;
+	margin: .5em auto;
+}
+
+.header-menu {
+	display: inline-flex;
+	float: left !important;
+	margin-top: 3em;
+}
+
+.father-vertical {
+	position: relative;
+}
+
+.child-vertical {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 580px) {
+
+.only-mobile {
+	display: block;
+}
+
+.header-menu {
+	display: none;
+	margin-top: 0;
+	font-size: 1.5em;
+	flex-direction: column;
+	color: white;
+	float: none !important;
+	text-align: center;
+}
+
+.visible-menu {
+	transition: all .2s ease-in-out;
+	display: flex;
+}
+
+.header-menu a {
+	margin-bottom: .2em;
+	margin-right: 0;
+}
+}

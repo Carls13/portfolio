@@ -1,0 +1,73 @@
+.footer-mobile{
+	display: none;
+}
+
+.top-mobile-image{
+	display: none;
+}
+
+footer{
+	width: 100vw;
+	background-color: hsl(192, 100%, 9%);
+	color: white;
+}
+
+form { 
+	display: flex;
+	flex-direction: column;
+ }
+
+ form .email-input {
+ 	width: 50%;
+ 	border-radius: 1em;
+ }
+
+ form .email-input::placeholder {
+ 	text-align: center;
+ }
+
+.footer-logo {
+  width: 80%;
+}
+
+.button {
+	align-self: center;
+	width: 30%;
+	background-color: white;
+	color: black;
+	border-radius: 1em;
+	border: solid white;
+	cursor: pointer;
+	box-shadow: 2.5px 5px black;
+	transition-duration: .5s;
+}
+
+.button:hover {
+	background-color: lightgray;
+	border: solid lightgray;
+}
+
+@media screen and (max-width: 580px){
+	form .email-input {
+	 	width: 75%;
+	}
+
+	.top-desktop-image{
+		display: none;
+	
+	}
+	.top-mobile-image{
+		display: block;
+		width: 100%;
+	}
+
+	.footer-desktop{
+		display: none;
+	}
+
+	.footer-mobile{
+		margin-top: 2em;
+		display: block;
+	}
+	
+}

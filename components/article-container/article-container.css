@@ -1,0 +1,44 @@
+.article-container {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  margin: 5%;
+  padding: 2.5%;
+}
+
+.article-container img {
+	display: block;
+	margin: 2.5% auto;
+	width: 50vw;
+}
+
+.article-container p {
+	text-align: justify;
+}
+
+.article-container:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.father-vertical {
+	position: relative;
+}
+
+.child-vertical {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+}
+
+#article-links {
+	text-align: right;
+}
+
+@media screen and (max-width: 580px){
+
+	#article-links {
+		margin: 15% 0;
+		text-align: center;
+	}
+}
