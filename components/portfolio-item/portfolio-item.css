@@ -1,0 +1,9 @@
+.portfolio-image {
+	width: 90%;
+	display: block;
+	margin: 20px auto;
+}
+
+.portfolio-link, .portfolio-link:hover {
+	color: #2A0D7C;
+}

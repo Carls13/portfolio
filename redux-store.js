@@ -3,14 +3,12 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 
 const initialState = {
   articles: [],
-  team: [],
-  services: [],
+  portfolio: [],
 }
 
 export const actionTypes = {
   FILL_ARTICLES: 'FILL_ARTICLES',
-  FILL_TEAM: 'FILL_TEAM',
-  FILL_SERVICES: 'FILL_SERVICES',
+  FILL_PORTFOLIO: 'FILL_PORTFOLIO',
 }
 
 // REDUCERS
@@ -20,13 +18,9 @@ export const reducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         articles: action.articles
       })
-    case actionTypes.FILL_TEAM:
+    case actionTypes.FILL_PORTFOLIO:
       return Object.assign({}, state, {
-        team: action.team
-      })
-    case actionTypes.FILL_SERVICES:
-      return Object.assign({}, state, {
-        services: action.services
+        portfolio: action.portfolio
       })
     default:
       return state
@@ -37,11 +31,8 @@ export const reducer = (state = initialState, action) => {
 export const saveArticlesData = (articles) => {
   return { type: actionTypes.FILL_ARTICLES, articles }
 }
-export const saveTeamData = (team) => {
-  return { type: actionTypes.FILL_TEAM, team }
-}
-export const saveServicesData = (services) => {
-  return { type: actionTypes.FILL_SERVICES, services }
+export const savePortfolioData = (portfolio) => {
+  return { type: actionTypes.FILL_PORTFOLIO, portfolio }
 }
 
 export function initializeStore (initialState) {

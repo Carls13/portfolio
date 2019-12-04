@@ -2,6 +2,6 @@ const routes = require('next-routes')
                                                   
 module.exports = routes()                           
 .add('index')                                       
-.add('the-corner', '/the-corner', 'the-corner')                         
-.add('service', '/service/:slug.:id', 'service')
+.add('blog', '/blog', 'blog')                         
+.add('portfolio', '/portfolio', 'portfolio')
 .add('article', '/article/:slug.:id', 'article')

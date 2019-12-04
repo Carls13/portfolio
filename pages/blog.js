@@ -5,7 +5,7 @@ import slug from './../helpers/slug';
 
 import { connect } from 'react-redux';
 
-class TheCorner extends React.Component{
+class Blog extends React.Component{
 
 	constructor(){
 		super();
@@ -17,8 +17,8 @@ class TheCorner extends React.Component{
 		let switche = false;
 
 		return(
-			<Layout title='#TheCorner | Unity Latinoamérica'>		
-				<h1 className="text-center mt-3"><b>#TheCorner</b></h1>
+			<Layout title='Blog | Carlos Hernández'>		
+				<h1 className="text-center mt-3"><b>Blog</b></h1>
 				<p className="text-center px-5 mx-5">Somos un hub para empresarios y emprendedores que buscan soluciones comunicacionales, 
 				tecnológicas o de recursos humanos. Creemos que convertir ideas en realidades es lo que mueve al mundo 
 				¡Y por eso queremos servir de apoyo para que materialices la tuya!</p>
@@ -46,5 +46,4 @@ class TheCorner extends React.Component{
 
 const mapStateToProps = ({ articles }) => ({ articles });
 
-
-export default connect(mapStateToProps)(TheCorner);
+export default connect(mapStateToProps)(Blog);

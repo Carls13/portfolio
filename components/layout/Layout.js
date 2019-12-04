@@ -32,47 +32,43 @@ class Layout extends React.Component{
 
   getContentfulData = () =>{
 
-    const { team } = this.props;
+    const { portfolio } = this.props;
 
-      if (team.length < 1){
+      if (portfolio.length < 1){
         this.setState({
               loading: true
         })
         var client = contentful.createClient({
-             space: '3yzg5epvoojr',
-             accessToken: 'phneLEC82rdUJPAuUjnGvsvHmoR11tpOTbWcIWxu944'
+             space: 'vdc17mupsw4k',
+             accessToken: 'O6Ifqs2j3UH2iji4s4o3XIXEQbChhycIDU1Sb2rc9Fo'
         })
   
         client.getEntries().then(entries =>{
-            this.setState({
-              loading: false
-        });
   
         // Filters articles    
           const articles = entries.items.filter((entry)=> {
-            return entry.sys.contentType.sys.id === 'article';
+            return entry.sys.contentType.sys.id === 'blog';
           }).map((item)=>({
             ...item.fields,
             createdAt: item.sys.createdAt
             })
           )
 
-          // Filters services    
-          const services = entries.items.filter((entry)=> {
-            return entry.sys.contentType.sys.id === 'service';
+          // Filters portfolio    
+          const portfolio = entries.items.filter((entry)=> {
+            return entry.sys.contentType.sys.id === 'portfolio';
           }).map((item)=>{
             return item.fields
           })
 
-          const team = entries.items.filter((entry)=> {
-            return entry.sys.contentType.sys.id === 'team';
-          }).map((item)=>{
-            return item.fields
-          })
   
        this.props.fillArticles(articles);
-       this.props.fillTeam(team);
-       this.props.fillServices(services);
+       
+       this.props.fillPortfolio(portfolio);
+
+       this.setState({
+          loading: false
+        });
         })}
   }
 
@@ -90,6 +86,21 @@ class Layout extends React.Component{
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="shortcut icon" type="image/x-icon" href="./static/carlos-logo.png" />
 				<title>{title}</title>
+        <script dangerouslySetInnerHTML={{
+              __html: `
+                <!--Start of Tawk.to Script-->
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/5dd72165d96992700fc8a41e/default';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+            <!--End of Tawk.to Script-->
+    `    }}
+            />
         <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet"></link>
 			</Head>
   			<Header/>
@@ -203,13 +214,9 @@ class Layout extends React.Component{
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fillTeam: (team) => dispatch({
-      type: 'FILL_TEAM',
-      team
-    }),
-    fillServices: (services) => dispatch({
-      type: 'FILL_SERVICES',
-      services
+    fillPortfolio: (portfolio) => dispatch({
+      type: 'FILL_PORTFOLIO',
+      portfolio
     }),
     fillArticles: (articles) => dispatch({
       type: 'FILL_ARTICLES',
@@ -218,8 +225,8 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const mapStateToProps = ({ team }) => {
-  return { team } ;
+const mapStateToProps = ({ portfolio }) => {
+  return { portfolio } ;
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Layout);

@@ -43,7 +43,7 @@ class Header extends React.Component{
 					<span className={menuClass}>
 						<Link href="/"><a>Inicio</a></Link>
 						<Link href="/#about"><a>Conóceme</a></Link>
-						<Link href="/#services"><a>Portafolio</a></Link>
+						<Link href="/portfolio"><a>Portafolio</a></Link>
 						<Link href="/the-corner"><a>Blog</a></Link>
 					</span>
 				</div>
