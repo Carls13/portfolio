@@ -1,0 +1,9 @@
+.personal-image {
+	width: 50vw;
+}
+
+@media screen and (max-width: 580px){
+	.personal-image {
+		width: 80vw;
+	}
+}

@@ -31,20 +31,20 @@ class Header extends React.Component{
   	return(
   		<header>
 			<div className="row">
-				<div className="col-10 col-lg-3">
+				<div className="col-9 col-md-3 col-lg-3">
 					<Link href="/">
 						<img src="./../../static/carlos-logo.png" alt="Header logo" className="header-logo pointer"/>
 					</Link>
 				</div>
-				<div className="col-2 menu-icon father-vertical only-mobile" onClick={this.showHideMenu}>
-					<img src="./../../static/menu.svg" className="child-vertical" />
+				<div className="col-3 menu-icon only-mobile" onClick={this.showHideMenu}>
+					<img src="./../../static/menu.svg" />
 				</div>
-				<div className="col-12 offset-lg-4 col-lg-5">
+				<div className="col-12 offset-lg-4 col-md-9 col-lg-5">
 					<span className={menuClass}>
 						<Link href="/"><a>Inicio</a></Link>
-						<Link href="/#about"><a>Conóceme</a></Link>
+						<Link href="/about"><a>Conóceme</a></Link>
 						<Link href="/portfolio"><a>Portafolio</a></Link>
-						<Link href="/the-corner"><a>Blog</a></Link>
+						<Link href="/blog"><a>Blog</a></Link>
 					</span>
 				</div>
 			</div>

@@ -21,7 +21,7 @@ header {
 
 .header-menu a:hover {
 	background-color: white;
-	color: #2A0D7C;
+	color: #850012;
 	font-weight: bold;
 }
 
@@ -36,23 +36,13 @@ header {
 	float: left !important;
 	margin-top: 3em;
 }
-
-.father-vertical {
-	position: relative;
-}
-
-.child-vertical {
-	margin: 0;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-}
 @media screen and (max-width: 580px) {
 
 .only-mobile {
-	display: block;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .header-menu {

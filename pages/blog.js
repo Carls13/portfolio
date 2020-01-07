@@ -5,6 +5,8 @@ import slug from './../helpers/slug';
 
 import { connect } from 'react-redux';
 
+import { formatText } from './../helpers/textFormat';
+
 class Blog extends React.Component{
 
 	constructor(){
@@ -16,32 +18,35 @@ class Blog extends React.Component{
 		const { articles } = this.props;
 		let switche = false;
 
-		return(
+		return (
 			<Layout title='Blog | Carlos Hernández'>		
 				<h1 className="text-center mt-3"><b>Blog</b></h1>
-				<p className="text-center px-5 mx-5">Somos un hub para empresarios y emprendedores que buscan soluciones comunicacionales, 
-				tecnológicas o de recursos humanos. Creemos que convertir ideas en realidades es lo que mueve al mundo 
-				¡Y por eso queremos servir de apoyo para que materialices la tuya!</p>
+				<p className="text-center px-3 mx-5">
+					Estoy realmente interesado en temas de desarrollo, telecomunicaciones, Internet of Things, electrónica,
+					música, cine, idiomas, sistemas, videojuegos, entre otros. Te invito a que me leas.
+				</p>
 				{
-					articles.map((article, i) => {
+					articles.map((item, i) => {
+						console.log(item)
+						let firstPeriod
 						switche = !switche;
+
 						return <InfoDiv
 									key={i}
-									text={`${article.content.content[0].content[0].value} [...]`}
-									image={article.preview.fields.file.url}
-									title={article.title}
+									text={formatText(item.article.content.filter((item, i) => i === 0))}
+									image={item.preview.fields.file.url}
+									title={item.title}
 									inverted={switche}
 									imgSpace={3}
 									textPosition='left'
 									paramsToLink={{
-										id: article.id,
-										slug: slug(article.title)
+										id: item.id,
+										slug: slug(item.title)
 									}}/>
 					})
 				}
 			</Layout>)
 	}
-
 }
 
 const mapStateToProps = ({ articles }) => ({ articles });

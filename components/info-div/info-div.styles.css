@@ -3,9 +3,8 @@
 	height: auto;
 }
 
-.info-text{
+.info-text {
 	font-size: 28px;
-	font-weight: bold;
 }
 
 .no-display{
@@ -21,7 +20,30 @@
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
+.img-container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.only-mobile {
+	display: none;
+}
+
 @media screen and (max-width: 580px){
+	.only-desktop {
+		display: none;
+	}
+	.only-mobile {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.info-text {
+		font-size: 20px;
+		text-align: center!important;
+	}
 
 	.info-img {
 		width: 80vw;

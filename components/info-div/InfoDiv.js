@@ -7,9 +7,14 @@ const InfoDiv = ({ text, image, inverted, title, imgSpace, textPosition, id, par
 
 	const textDiv = 
 					<div className={`col-lg-${12 - imgSpace} col-12 my-5`}>
-						<div className={`p-5 info-text text-${textPosition}`}>
+						<div className={`p-1 info-text text-${textPosition}`}>
 		   		   		{
-		   		   			title && <h1 className="mb-5"><b>{title}</b></h1>
+		   		   			title && 
+		   		   			<React.Fragment>
+		   		   				<h1 className="mb-5 only-desktop"><b>{title}</b></h1>
+		   		   				<h3 className="mb-5 only-mobile"><b>{title}</b></h3>
+
+		   		   			</React.Fragment>
 		   		   		}
 	   		   				{text} &nbsp;
    		   				{
@@ -18,18 +23,18 @@ const InfoDiv = ({ text, image, inverted, title, imgSpace, textPosition, id, par
 								route="article"
 								params={paramsToLink}
 								>
-								<a className="text-center article-link">Leer más</a>
+								<a className="text-center article-link mt-0">Leer más</a>
 								</Link>
 		   				}
 		   				</div>
 	   				</div>;
 
 	return (
-	   <div className="mx-4 row my-5"  id={`${id ? id : ''}`}>
+	   <div className="mx-4 row my-5 box-shadow"  id={`${id ? id : ''}`}>
 	   		{
 	   			!inverted && textDiv
 		   	}
-	   		<div className={`col-lg-${imgSpace} col-12 my-5`}>
+	   		<div className={`col-lg-${imgSpace} col-12 my-5 img-container`}>
 	   			<img src={image} className="info-img center-image animation" alt="Welcome"/>
 	   		</div>
 	   		{

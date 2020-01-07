@@ -1,0 +1,138 @@
+.slideshow-container {
+	max-width: 100%;
+	position: relative;
+	margin: auto;
+}
+
+.mySlides {
+	display: none;
+}
+
+.services-list {
+	padding: 0 5%;
+}
+
+.full-width {
+	width: 100vw;
+}
+
+.service {
+	padding: 0 10px;
+    margin: auto 1%;
+    background: gray;
+	box-shadow: 0px 9px 20px 0px black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.img-service {
+	width: 100%;
+	display: block;
+	margin: auto;
+}
+
+.service-active div h4, .service-active div p {
+	display: block;
+	text-align: center;
+}
+
+.w-18 {
+	width: 18%;
+	height: 18vw;
+}
+
+.w-9 {
+	width: 9%;
+	height: 9vw;
+}
+.w-18 {
+	width: 18%;
+	height: 18vw;
+}
+.w-12 {
+	width: 12%;
+	height: 12vw;
+}
+.w-6 {
+	width: 6%;
+	height: 6vw;
+}
+.w-20 {
+	width: 20.25%;
+	height: 20.25vw;
+}
+.w-14 {
+	width: 14.25%;
+	height: 14.25vw;
+}
+.w-11 {
+	width: 11.25%;
+	height: 11.25vw;
+}
+.w-8 {
+	width: 8.25%;
+	height: 8.25vw;
+}
+
+.service-active {
+	background-color: #850012;
+	width: 36%;
+	height: 36vw;
+}
+
+.service h3, .service p{
+	display: none;
+}
+
+.service-active h3, .service-active p{
+	display: block;
+}
+
+.skill-icon {
+	width: 50%;
+	height: 50%;
+}
+
+.service-prev, .service-next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	margin-top: -22px;
+	padding: 16px;
+	color: white!important;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+}
+
+.prev:hover,
+.next:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.service-next {
+	right: 2%;
+	border-radius: 3px 0 0 3px;
+}
+
+@media screen and (max-width: 580px) {
+	.service-active {
+		display: flex!important;
+		width: 95vw!important;
+		height: 95vw;
+	}
+
+	.service-active div p {
+		display: none;
+	}
+
+	.service {
+		display: none;
+	}
+}

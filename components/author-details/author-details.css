@@ -2,3 +2,9 @@
 	width: 120px!important;
 	height: auto;
 }
+
+.author-div div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}

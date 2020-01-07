@@ -8,9 +8,15 @@
 
 footer{
 	width: 100vw;
-	background-color: hsl(192, 100%, 9%);
+	background-color: #850012;
 	color: white;
 }
+
+footer .row div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+} 
 
 form { 
 	display: flex;
@@ -27,7 +33,7 @@ form {
  }
 
 .footer-logo {
-  width: 80%;
+  width: 55%;
 }
 
 .button {
@@ -47,6 +53,29 @@ form {
 	border: solid lightgray;
 }
 
+.social-media {
+	display: flex!important;
+	flex-direction: row!important;
+	justify-content: center!important;
+}
+
+.social-media a {
+	margin-right: 5%;
+}
+
+.social-media img {
+	width: 70px;
+	height: 70px;
+}
+
+.no-margin {
+	margin-right: 0!important;
+}
+
+footer a, footer a:hover {
+	color: white;
+}
+
 @media screen and (max-width: 580px){
 	form .email-input {
 	 	width: 75%;
@@ -54,7 +83,6 @@ form {
 
 	.top-desktop-image{
 		display: none;
-	
 	}
 	.top-mobile-image{
 		display: block;

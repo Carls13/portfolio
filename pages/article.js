@@ -42,12 +42,10 @@ class Article extends React.Component{
 	render(){
 		const { article } = this.state;
 
-		console.log(article);
-
 		return(
-			<Layout title={`${article ? article.title : 'Loading...' } | Unity Latinoamérica`}>		
+			<Layout title={`${article ? article.title : 'Blog' } | Carlos Hernández`}>		
 				{
-					article && <ArticleContainer article={article}/>
+					article && <ArticleContainer item={article}/>
 				}
 			</Layout>)
 	}
