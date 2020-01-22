@@ -93,6 +93,17 @@ class Layout extends React.Component{
         <meta property="og:locale" content="es_ES" />
         <link rel="shortcut icon" type="image/x-icon" href="./static/carlos-logo.png" />
 				<title>{title}</title>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156750484-1"></script>
+		<script dangerouslySetInnerHTML={{
+	          __html: `
+	           window.dataLayer = window.dataLayer || [];
+			  function gtag(){dataLayer.push(arguments);}
+			  gtag('js', new Date());
+
+			  gtag('config', 'UA-156750484-1');
+		    `    }}
+		            />
+
         <script dangerouslySetInnerHTML={{
               __html: `
                 window.ChatraSetup = {
