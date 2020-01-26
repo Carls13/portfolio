@@ -85,6 +85,7 @@ class Layout extends React.Component{
 			<Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta property="og:title" content={title} />
+        <link rel="manifest" href="./../../static/manifest.json" />
         <meta property="og:url" content="http://carlosshb.com" />
         <meta property="og:description" content="Jóven desarrollador web y estudiante de ingeniería. Sitio personal
                                                 con portafolio, blog y contacto. ¡Visítame!"/>
