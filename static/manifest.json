@@ -5,6 +5,7 @@
       {
         "src": "./pwa-logo.png",
         "sizes": "512x512",
+        "type": "image/png"
       }
     ],
     "start_url": "/?utm_source=homescreen",
