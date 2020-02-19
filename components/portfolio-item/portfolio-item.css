@@ -7,3 +7,19 @@
 .portfolio-link, .portfolio-link:hover {
 	color: #850012;
 }
+
+@keyframes fade-in {
+	from {
+        filter: blur(5px);
+        opacity: 0;
+    }
+
+    to {
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.portfolio {
+	animation: 1s fade-in ease;
+}

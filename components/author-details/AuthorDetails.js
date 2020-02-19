@@ -4,8 +4,8 @@ import './author-details.css';
 
 const AuthorDetails = () => (
      	<div className="row text-center author-div">
-     		<div className="col-5">
-     			<img src="./../../static/myself.jpg" className="d-block m-auto author rounded-circle"/>
+     		<div className="col-5"> 
+     			<img src="./../../static/myself.jpg" alt="Carlos Hernández" className="d-block m-auto author rounded-circle"/>
      		</div>
      		<div className="col-7 py-3">
      			<h3><b>Carlos Hernández</b></h3>

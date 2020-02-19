@@ -37,7 +37,7 @@ class Header extends React.Component{
 					</Link>
 				</div>
 				<div className="col-3 menu-icon only-mobile" onClick={this.showHideMenu}>
-					<img src="./../../static/menu.svg" />
+					<img src="./../../static/menu.svg" alt="Menú" />
 				</div>
 				<div className="col-12 offset-lg-4 col-md-9 col-lg-5">
 					<span className={menuClass}>

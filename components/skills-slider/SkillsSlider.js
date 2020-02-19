@@ -106,27 +106,27 @@ class SkillsSlider extends React.Component {
 				<div className="slideshow-container full-width">
 					<div className="row services-list">
 						<div className={classNames[0]} >
-							<img src='./../../static/web.png' className="skill-icon"/>
+							<img src='./../../static/web.png' alt="Carlos Hernández" className="skill-icon"/>
 							<h3 className="my-2"><b>HTML/CSS/Javascript</b></h3>
 							<p><b>Sitios web estáticos ajustados a tus necesidades</b></p>
 						</div>
 						<div className={classNames[1]} >
-							<img src='./../../static/responsive.png' className="skill-icon"/>
+							<img src='./../../static/responsive.png' alt="Carlos Hernández" className="skill-icon"/>
 							<h3 className="my-2"><b>Responsive Design</b></h3>
 							<p><b>Diseños adaptados a cualquier dispositivo</b></p>
 						</div>
 						<div className={classNames[2]} >
-							<img src='./../../static/mockup.png' className="skill-icon"/>
+							<img src='./../../static/mockup.png' alt="Carlos Hernández" className="skill-icon"/>
 							<h3 className="my-2"><b>Diseños modernos para ti</b></h3>
 							<p><b>Interfaces amigables para la mejor experiencia de usuario</b></p>
 						</div>
 						<div className={classNames[3]} >
-							<img src='./../../static/react.png' className="skill-icon"/>
+							<img src='./../../static/react.png' alt="Carlos Hernández" className="skill-icon"/>
 							<h3 className="my-2"><b>React.js</b></h3>
 							<p><b>El framework de mayor crecimiento actualmente</b></p>
 						</div>
 						<div className={classNames[4]} >
-							<img src='./../../static/english.png' className="skill-icon"/>
+							<img src='./../../static/english.png' alt="Carlos Hernández" className="skill-icon"/>
 							<h3 className="my-2"><b>Alto dominio del idioma inglés</b></h3>
 							<p><b>Gran desenvolvimiento en la lengua anglosajona</b></p>
 						</div>

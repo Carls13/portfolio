@@ -24,16 +24,16 @@ const Slider = () => {
 	return (
 	   <div className="slider mb-3" id="gallery">
 	   		<div className={`slide ${sliderShowing === 1 ? 'slide-active' : null} text-center`}>
-	   			<img src="./../../static/slider-1.jpg" />
+	   			<img src="./../../static/slider-1.jpg" alt="Carlos Hernández" />
 	   		</div>
 	   		<div className={`slide ${sliderShowing === 2 ? 'slide-active' : null} text-center`}>
-	   			<img src="./../../static/slider-2.jpg" />
+	   			<img src="./../../static/slider-2.jpg" alt="Carlos Hernández" />
 	   		</div>
 	   		<div className={`slide ${sliderShowing === 3 ? 'slide-active' : null} text-center`}>
-	   			<img src="./../../static/slider-3.jpg" />
+	   			<img src="./../../static/slider-3.jpg" alt="Carlos Hernández" />
 	   		</div>
 	   		<div className={`slide ${sliderShowing === 4 ? 'slide-active' : null} text-center`}>
-	   			<img src="./../../static/slider-4.jpg" />
+	   			<img src="./../../static/slider-4.jpg" alt="Carlos Hernández" />
 	   		</div>
 			<a className="prev" onClick={() => onPrevClick()}>&#10094;</a>
 			<a className="next" onClick={() => onNextClick()}>&#10095;</a>
