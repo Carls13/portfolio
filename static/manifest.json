@@ -5,11 +5,17 @@
       {
         "src": "./pwa-logo.png",
         "sizes": "512x512",
-        "type": "image/x-icon"
       }
     ],
     "start_url": "/?utm_source=homescreen",
     "display": "standalone",
     "theme_color": "#850012",
-    "background_color": "#FFFFFF"
+    "background_color": "#FFFFFF",
+    "prefer_related_applications": true,
+    "related_applications": [
+      {
+        "platform": "play",
+        "id": "com.google.samples.apps.iosched"
+      }
+    ]
   }

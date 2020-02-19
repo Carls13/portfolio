@@ -81,10 +81,12 @@ class Layout extends React.Component{
         <meta property="og:url" content="http://carlosshb.com" />
         <meta property="og:description" content="Jóven desarrollador web y estudiante de ingeniería. Sitio personal
                                                 con portafolio, blog y contacto. ¡Visítame!"/>
+        <meta name="Description" content="Jóven desarrollador web y estudiante de ingeniería. Sitio personal
+                                                con portafolio, blog y contacto. ¡Visítame!"/>
         <meta property="og:image" content="./../../static/carlos-logo.png"/>
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="es_ES" />
-        <meta name="theme-color" content="#850012'"/>
+        <meta name="theme-color" content="#850012"/>
         <link rel="shortcut icon" type="image/x-icon" href="./static/carlos-logo.png" />
 				<title>{title}</title>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156750484-1"></script>
