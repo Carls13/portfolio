@@ -1,14 +1,18 @@
 import React from 'react';
 
 import './article-container.css';
+
 import AuthorDetails from './../author-details/AuthorDetails';
 import { Link } from './../../routes';
 
 import { formatText } from './../../helpers/textFormat';
 
+import { connect } from 'react-redux';
+import { selectMessages, selectLanguage } from '../../redux/translation/translation.selectors';
+
 import Moment from 'react-moment';
 
-const ArticleContainer = ({ item }) => {
+const ArticleContainer = ({ item, language, messages }) => {
 	const { title, article, createdAt } = item;
 
 	var fontClass;
@@ -16,7 +20,7 @@ const ArticleContainer = ({ item }) => {
 	   <div className="article-container">
 			<h1 className="text-center">{title}</h1>
 			<h5 className="text-center">
-				<Moment locale="es" fromNow>{createdAt}</Moment>
+				<Moment locale={language} fromNow>{createdAt}</Moment>
 			</h5>
 			{
 				formatText(article.content)
@@ -29,11 +33,11 @@ const ArticleContainer = ({ item }) => {
 				<div className="col-lg-4 offset-lg-4 col-12" id="article-links">
 					<div className="">
 						<Link route="index">
-							Volver a Inicio
+							{messages.BACK_HOME}
 						</Link>
 						<br/>
 						<Link route="blog">
-							Volver a Blog
+							{messages.BACK_BLOG}
 						</Link>
 					</div>
 				</div>
@@ -42,4 +46,9 @@ const ArticleContainer = ({ item }) => {
 	)
 };
 
-export default ArticleContainer;
+const mapStateToProps = (state) => ({
+  messages: selectMessages('ARTICLE')(state),
+  language: selectLanguage(state),
+})
+
+export default connect(mapStateToProps)(ArticleContainer);

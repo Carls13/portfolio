@@ -1,42 +1,30 @@
-// import { Link } from '../routes'
 import Layout from './../components/layout/Layout';
-import PortfolioItem from './../components/portfolio-item/PortfolioItem';
+import PortfolioList from './../components/portfolio-list/PortfolioList';
 
 import { connect } from 'react-redux';
+import { selectMessages } from './../redux/translation/translation.selectors'
 
 class Portfolio extends React.Component{
 
-	constructor(){
-		super();
-		}
-
 	render(){
-		const { portfolio } = this.props;
+		const { messages } = this.props;
 
-		return(
+		return (
 			<Layout title='Portafolio | Carlos Hernández'>	
-				<h1 className="text-center mb-2">Algunos de mis trabajos realizados</h1>
+				<h1 className="text-center mb-2">{messages.PREVIOUS}</h1>
 				<div className="row">
-					{
-						portfolio.filter((element) => !element.personal)
-						.map((element) => {
-							return <PortfolioItem item={element} />
-						})
-					}
+					<PortfolioList forPersonal={false}/>
 				</div>
-				<h1 className="text-center mb-2">Algunos proyectos personales</h1>
+				<h1 className="text-center mb-2">{messages.PERSONAL}</h1>
 				<div className="row">
-					{
-						portfolio.filter((element) => element.personal)
-						.map((element) => {
-							return <PortfolioItem item={element} />
-						})
-					}
+					<PortfolioList forPersonal />
 				</div>
 			</Layout>)
 	}
 }
 
-const mapStateToProps = ({ portfolio }) => ({ portfolio });
+const mapStateToProps = (state) => ({
+  messages: selectMessages('PORTFOLIO')(state),
+});
 
 export default connect(mapStateToProps)(Portfolio);

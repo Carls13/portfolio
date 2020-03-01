@@ -3,7 +3,10 @@ import { Link } from './../../routes';
 
 import './info-div.styles.css';
 
-const InfoDiv = ({ text, image, inverted, title, imgSpace, textPosition, id, paramsToLink }) => {
+import { connect } from 'react-redux';
+import { selectMessages } from '../../redux/translation/translation.selectors';
+
+const InfoDiv = ({ text, image, inverted, title, imgSpace, textPosition, id, paramsToLink, messages }) => {
 
 	const textDiv = 
 					<div className={`col-lg-${12 - imgSpace} col-12 my-5`}>
@@ -23,7 +26,7 @@ const InfoDiv = ({ text, image, inverted, title, imgSpace, textPosition, id, par
 								route="article"
 								params={paramsToLink}
 								>
-								<a className="text-center article-link mt-0">Leer más</a>
+								<a className="text-center article-link mt-0">{messages.MORE}</a>
 								</Link>
 		   				}
 		   				</div>
@@ -42,6 +45,11 @@ const InfoDiv = ({ text, image, inverted, title, imgSpace, textPosition, id, par
 		   	}
 		   	
 	   </div>
-)}
+)
+};
 
-export default InfoDiv;
+const mapStateToProps = (state) => ({
+  messages: selectMessages('PREVIEW')(state)
+})
+
+export default connect(mapStateToProps)(InfoDiv);

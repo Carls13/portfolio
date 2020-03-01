@@ -1,44 +1,36 @@
 import Layout from './../components/layout/Layout';
 import Slider from './../components/slider/slider';
-import PortfolioItem from './../components/portfolio-item/PortfolioItem';
+import PortfolioList from './../components/portfolio-list/PortfolioList';
 
 import { Link } from './../routes';
 
 import { connect } from 'react-redux';
+import { selectMessages } from './../redux/translation/translation.selectors'
 
 class Index extends React.Component{
 
-	constructor(){
-		super();
-		}
-
 	render(){
-		const { portfolio } = this.props;
+		const { messages } = this.props;
 
-		return(
+		return (
 			<Layout title='Carlos Hernández | Desarrollo y Tecnología'>	
 				<Slider/>
-				<h1 className="text-center mb-2">Últimos proyectos agregados</h1>
+				<h1 className="text-center mb-2">{messages.HIGHLIGHT}</h1>
 				<div className="row">
-					{
-						portfolio.filter((element) => !element.personal)
-						.filter((element, i) => i < 3)
-						.map((element) => {
-							return <PortfolioItem item={element} />
-						})
-					}
+					<PortfolioList short highlight/> 
 				</div>
 					<Link route="portfolio">
 						<h3 className="text-center see-all mb-5">
-							Velos todos aquí
+							{messages.SEE_ALL}
 						</h3>
 					</Link>
-					<h5 className="text-center">¿Te gustaron y necesitas desarrollar tu sitio web? <b>No dudes en contactarme.</b></h5>
+					<h5 className="text-center">{messages.LIKED} <b>{messages.CONTACT}</b>.</h5>
 			</Layout>)
 	}
 }
 
-
-const mapStateToProps = ({ portfolio }) => ({ portfolio });
+const mapStateToProps = (state) => ({
+  	messages: selectMessages('HOME')(state),
+})
 
 export default connect(mapStateToProps)(Index);

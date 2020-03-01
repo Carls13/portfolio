@@ -9,8 +9,8 @@
     "start": "node server.js",
     "export": "next export"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["development", "desarrollo", "web", "react", "Venezuela", "tecnologia"],
+  "author": "Carlos Hernandez",
   "license": "ISC",
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
@@ -28,6 +28,7 @@
     "react-redux": "^7.1.1",
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
+    "reselect": "^4.0.0",
     "slugify": "^1.3.5",
     "styled-components": "^4.4.0"
   }

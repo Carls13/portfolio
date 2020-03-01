@@ -142,7 +142,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const mapStateToProps = ({ portfolio }) => {
+const mapStateToProps = ({ data: { portfolio } }) => {
   return { portfolio };
 }
 

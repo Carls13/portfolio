@@ -1,5 +1,5 @@
 .only-mobile {
-	display: none;
+	display: none!important;
 }
 
 .pointer {
@@ -8,6 +8,19 @@
 
 header {
 	background-color: #ffffff;
+}
+
+.header-menu select {
+	height: 40px;
+}
+
+.lang-div {
+	display: flex;
+	align-items: center;
+}
+
+select {
+	font-weight: bold;
 }
 
 .header-menu a {
@@ -27,7 +40,6 @@ header {
 
 .header-logo {
 	height: 20vh;
-	display: block;
 	margin: .5em auto;
 }
 
@@ -39,7 +51,7 @@ header {
 @media screen and (max-width: 580px) {
 
 .only-mobile {
-	display: flex;
+	display: flex!important;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;

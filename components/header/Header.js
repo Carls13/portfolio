@@ -1,12 +1,17 @@
 import React from 'react';
+
 import Link from 'next/link';
 import './header.styles.css';
+
+import { connect } from 'react-redux';
+
+import { selectMessages } from '../../redux/translation/translation.selectors'
 
 class Header extends React.Component{
 	constructor(){
 	    super();
 	    this.state = {
-	    	displayMenu: false
+	    	displayMenu: false,
 	    }
 	  }
 
@@ -16,9 +21,16 @@ class Header extends React.Component{
 	  	});
 	  }
 
+	  handleChange = (event) => {
+	  	const { changeLanguage } = this.props;
+
+	  	changeLanguage(event.target.value);
+	  }
+
   render(){
 
-  	const { displayMenu } = this.state
+  	const { displayMenu } = this.state;
+  	const { language, messages } = this.props;
 
 	//Controls class of menu item
 	let menuClass;
@@ -31,27 +43,51 @@ class Header extends React.Component{
   	return(
   		<header>
 			<div className="row">
-				<div className="col-9 col-md-3 col-lg-3">
+				<div className="col-8 col-md-3 col-lg-2">
 					<Link href="/">
 						<img src="./../../static/carlos-logo.png" alt="Header logo" className="header-logo pointer"/>
 					</Link>
 				</div>
-				<div className="col-3 menu-icon only-mobile" onClick={this.showHideMenu}>
+				<div className="col-2 only-mobile lang-div">
+					<select value={language} onChange={this.handleChange}>
+				            <option value="EN">EN</option>
+				            <option value="ES">ES</option>
+	          		</select>
+				</div>
+				<div className="col-2 menu-icon only-mobile" onClick={this.showHideMenu}>
 					<img src="./../../static/menu.svg" alt="Menú" />
 				</div>
-				<div className="col-12 offset-lg-4 col-md-9 col-lg-5">
+				<div className="col-12 offset-lg-5 col-md-9 col-lg-4">
 					<span className={menuClass}>
-						<Link href="/"><a>Inicio</a></Link>
-						<Link href="/about"><a>Conóceme</a></Link>
-						<Link href="/portfolio"><a>Portafolio</a></Link>
-						<Link href="/blog"><a>Blog</a></Link>
+						<Link href="/"><a>{messages.HOME}</a></Link>
+						<Link href="/about"><a>{messages.ABOUT}</a></Link>
+						<Link href="/portfolio"><a>{messages.PORTFOLIO}</a></Link>
+						<Link href="/blog"><a>{messages.BLOG}</a></Link>
+						<select className="footer-desktop" value={language} onChange={this.handleChange}>
+				            <option value="EN">EN</option>
+				            <option value="ES">ES</option>
+		          		</select>	
 					</span>
 				</div>
 			</div>
+					
 	</header>
-	
-)
+	)
   }
 };
 
-export default Header;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    changeLanguage: (language) => dispatch({
+      type: 'CHANGE_LANGUAGE',
+      payload: language
+    })
+  }
+}
+
+const mapStateToProps = (state) => ({
+  messages: selectMessages('HEADER')(state),
+  language: state.translation.language 
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

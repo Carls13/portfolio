@@ -52,7 +52,7 @@ class Article extends React.Component{
 
 }
 
-const mapStateToProps = ({ articles }) => {
+const mapStateToProps = ({ data: { articles } }) => {
 	return { storeArticles: articles }
 }
 
