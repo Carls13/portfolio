@@ -89,16 +89,16 @@ class Layout extends React.Component{
         <meta name="theme-color" content="#850012"/>
         <link rel="shortcut icon" type="image/x-icon" href="./static/carlos-logo.png" />
 				<title>{title}</title>
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156750484-1"></script>
-		<script dangerouslySetInnerHTML={{
-	          __html: `
-	           window.dataLayer = window.dataLayer || [];
-			  function gtag(){dataLayer.push(arguments);}
-			  gtag('js', new Date());
+    		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156750484-1"></script>
+    		<script dangerouslySetInnerHTML={{
+    	          __html: `
+    	           window.dataLayer = window.dataLayer || [];
+    			  function gtag(){dataLayer.push(arguments);}
+    			  gtag('js', new Date());
 
-			  gtag('config', 'UA-156750484-1');
-		    `    }}
-		            />
+    			  gtag('config', 'UA-156750484-1');
+    		    `    }}
+    		            />
 
         <script dangerouslySetInnerHTML={{
               __html: `

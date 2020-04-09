@@ -43,7 +43,7 @@ class Header extends React.Component{
   	return(
   		<header>
 			<div className="row">
-				<div className="col-8 col-md-3 col-lg-2">
+				<div className="col-8 col-sm-3 col-lg-2">
 					<Link href="/">
 						<img src="./../../static/carlos-logo.png" alt="Header logo" className="header-logo pointer"/>
 					</Link>
@@ -57,7 +57,7 @@ class Header extends React.Component{
 				<div className="col-2 menu-icon only-mobile" onClick={this.showHideMenu}>
 					<img src="./../../static/menu.svg" alt="Menú" />
 				</div>
-				<div className="col-12 offset-lg-5 col-md-9 col-lg-4">
+				<div className="col-12 offset-lg-5 col-sm-9 col-lg-4">
 					<span className={menuClass}>
 						<Link href="/"><a>{messages.HOME}</a></Link>
 						<Link href="/about"><a>{messages.ABOUT}</a></Link>

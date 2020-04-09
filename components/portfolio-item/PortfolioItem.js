@@ -3,14 +3,14 @@ import React, { Fragment } from 'react';
 import { useNearScreen } from './../../helpers/useNearScreen.js';
 
 import { connect } from 'react-redux';
-import { selectMessages } from './../../redux/translation/translation.selectors'
+import { selectMessages, selectLanguage } from './../../redux/translation/translation.selectors'
 
 import './portfolio-item.css'
 
-const PortfolioItem = ({ item, messages }) => {
+const PortfolioItem = ({ item, messages, language }) => {
   	const [show, element] = useNearScreen()
 
-	const { title, description, link } = item;
+	const { title, description, link, englishDescription } = item;
 	const image = item.preview.fields.file.url;
 
 	return (
@@ -20,7 +20,7 @@ const PortfolioItem = ({ item, messages }) => {
    			<Fragment>
    				<img src={image} className="portfolio-image" alt="Proyecto Carlos Hernández" />
 			    <h3 className="text-center">{title}</h3>
-			    <p className="text-center">{description}</p>
+			    <p className="text-center">{language === 'ES' ? description : englishDescription}</p>
 			    <a className="text-center portfolio-link" href={link} target="_blank">
 		    		<h5><b>{messages.VISIT}</b></h5>
 	    		</a>	
@@ -31,6 +31,7 @@ const PortfolioItem = ({ item, messages }) => {
 
 const mapStateToProps = (state) => ({
   messages: selectMessages('PORTFOLIO')(state),
+  language: selectLanguage(state),
 });
 
 

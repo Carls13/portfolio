@@ -1,5 +1,5 @@
 .info-img{
-	width: 20vw;
+	width: 100%;
 	height: auto;
 }
 
@@ -46,7 +46,7 @@
 	}
 
 	.info-img {
-		width: 80vw;
+		width: 100%;
 		height: auto;
 	}
 

@@ -52,8 +52,8 @@ function Footer({ messages, language }){
 		   			</div>
 		         </div>
 		   	</footer>
-   	</React.Fragment>
- );
+   		</React.Fragment>
+ 	);
 }
 
 const mapStateToProps = (state) => ({

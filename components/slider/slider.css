@@ -2,6 +2,11 @@
 	display: none;
 }
 
+.slide img {
+	width: 100vw;
+	height: auto;
+}
+
 .slide-active {
 	display: block!important;
 	padding-top: 2.5vh;
@@ -84,5 +89,15 @@
 
 	.slide img {
 		padding-top: 10vh;
+	}
+}
+
+@media screen and (min-width: 550px) and (max-width: 992px){
+	.next, .prev {
+		top: -150px;
+	}
+
+	.next {
+		left: 88vw;
 	}
 }
