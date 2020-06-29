@@ -8,7 +8,7 @@ import { selectMessages } from '../../redux/translation/translation.selectors';
 const AuthorDetails = ({ messages }) => (
 	<div className="row text-center author-div">
 		<div className="col-5"> 
-			<img src="./../../static/myself.jpg" alt="Carlos Hernández" className="d-block m-auto author rounded-circle"/>
+			<img src="./../../static/samuel.JPG" alt="Carlos Hernández" className="d-block m-auto author rounded-circle"/>
 		</div>
 		<div className="col-7 py-3">
 			<h3><b>Carlos Hernández</b></h3>

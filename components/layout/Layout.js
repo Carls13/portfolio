@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 
 import Header from './../header/Header';
 import Footer from '../footer/Footer';
-import Spinner from '../spinner/Spinner';
+import { Spinner } from '../Spinner/Spinner';
 
 import 'bootstrap/dist/css/bootstrap.css'; 
 import './styles.css';   

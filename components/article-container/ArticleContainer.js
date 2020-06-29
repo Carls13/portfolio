@@ -13,17 +13,17 @@ import { selectMessages, selectLanguage } from '../../redux/translation/translat
 import Moment from 'react-moment';
 
 const ArticleContainer = ({ item, language, messages }) => {
-	const { title, article, createdAt } = item;
+	const { title, article, createdAt, englishTitle, englishArticle } = item;
 
 	var fontClass;
 	return (
 	   <div className="article-container">
-			<h1 className="text-center">{title}</h1>
+			<h1 className="text-center">{language === 'ES' ? title : englishTitle}</h1>
 			<h5 className="text-center">
 				<Moment locale={language} fromNow>{createdAt}</Moment>
 			</h5>
 			{
-				formatText(article.content)
+				language === 'ES' ? formatText(article.content) : formatText(englishArticle.content)
 			}
 			<hr/>
 			<div className="row">
@@ -33,11 +33,11 @@ const ArticleContainer = ({ item, language, messages }) => {
 				<div className="col-lg-4 offset-lg-4 col-12" id="article-links">
 					<div className="">
 						<Link route="index">
-							{messages.BACK_HOME}
+							<a>{messages.BACK_HOME}</a>
 						</Link>
 						<br/>
 						<Link route="blog">
-							{messages.BACK_BLOG}
+							<a>{messages.BACK_BLOG}</a>
 						</Link>
 					</div>
 				</div>

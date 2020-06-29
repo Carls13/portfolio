@@ -5,13 +5,7 @@ import { selectMessages, selectLanguage } from '../../redux/translation/translat
 
 import './footer.styles.css';
 
-//Spanish images
-const DESKTOP = './../static/footer-art.jpg';
-const MOBILE = './../static/footer-mobile.jpg';
-
-//English images
-const DESKTOP_ENGLISH = './../static/footer-art-EN.jpg';
-const MOBILE_ENGLISH = './../static/footer-mobile-EN.jpg';
+import { InstagramFeed } from './../InstagramFeed/InstagramFeed';
 
 function Footer({ messages, language }){
     return (
@@ -27,7 +21,7 @@ function Footer({ messages, language }){
 
 						<h5 className="text-center mt-3"><b>{messages.CONTACT}:</b></h5>
 						<a href="tel:+584144077735"><h5 className="text-center">+58 (414) 4077735</h5></a>
-						<a href="mailto:devcarlosshb98@gmail.com"><h5 className="text-center">devcarlosshb98@gmail.com</h5></a>
+						<a href="mailto:charlesshb98@gmail.com"><h5 className="text-center">charlesshb98@gmail.com</h5></a>
 
 						<h5 className="text-center mt-3"><b>{messages.SOCIAL}:</b></h5>
 						<div className="social-media">
@@ -47,8 +41,7 @@ function Footer({ messages, language }){
 		               </div>
 					</div>
 		   			<div className="col-12 col-lg-6 p-4 mt-4">
-						<img src={language === 'ES' ? DESKTOP : DESKTOP_ENGLISH} alt="Carlos Hernández" className="mr-5 pr-4 mb-4 footer-desktop"/>	
-						<img src={language === 'ES' ? MOBILE : MOBILE_ENGLISH} alt="Carlos Hernández" className="footer-mobile mb-5"/>	
+						<InstagramFeed />
 		   			</div>
 		         </div>
 		   	</footer>

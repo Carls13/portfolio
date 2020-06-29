@@ -9,7 +9,14 @@
     "start": "node server.js",
     "export": "next export"
   },
-  "keywords": ["development", "desarrollo", "web", "react", "Venezuela", "tecnologia"],
+  "keywords": [
+    "development",
+    "desarrollo",
+    "web",
+    "react",
+    "Venezuela",
+    "tecnologia"
+  ],
   "author": "Carlos Hernandez",
   "license": "ISC",
   "dependencies": {
@@ -22,6 +29,7 @@
     "next-offline": "^4.0.6",
     "next-routes": "^1.4.2",
     "nprogress": "^0.2.0",
+    "prismjs": "^1.19.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-moment": "^0.9.6",

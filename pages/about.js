@@ -13,7 +13,7 @@ function About({ messages }){
       <Layout title="Conóceme | Carlos Hernández">
         <h1 className="text-center mt-3"><b>{messages.MYSELF}</b></h1>
         <div className="row">
-          <img src="../static/myself.jpg" alt="Carlos" className="d-block mx-auto my-4 personal-image"/>
+          <img src="../static/samuel.JPG" alt="Carlos" className="d-block mx-auto my-4 personal-image"/>
        </div>
         <div className="row">
           <p className="px-5 text-center">

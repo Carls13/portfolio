@@ -2,10 +2,10 @@ import React from "react";
 
 import PortfolioItem from './../portfolio-item/PortfolioItem';
 
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-function PortfolioList({ portfolio, short, forPersonal, highlight }){
-
+function PortfolioList({ short, forPersonal, highlight }){
+	const portfolio = useSelector(state => state.data.portfolio)
     return (
 		<React.Fragment>
 	        {
@@ -27,6 +27,4 @@ function PortfolioList({ portfolio, short, forPersonal, highlight }){
  	);
 };
 
-const mapStateToProps = ({ data: { portfolio } }) => ({ portfolio });
-
-export default connect(mapStateToProps)(PortfolioList);
+export default PortfolioList
