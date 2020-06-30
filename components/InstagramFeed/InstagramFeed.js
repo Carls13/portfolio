@@ -4,7 +4,7 @@ import { Feed, Account, Grid, Post, Image } from './styles.js';
 
 import { useFetching } from './../../hooks/useFetching';
 
-import { Spinner } from './../Spinner/Spinner';
+import { Loader } from './../Loader/Loader';
 
 export const InstagramFeed = () => {
 	const [loading, data] = useFetching("https://www.instagram.com/carlosshb98/?__a=1");
@@ -12,7 +12,7 @@ export const InstagramFeed = () => {
 	return (
 		<Fragment>
 		{
-			loading ? <Spinner/> : 
+			loading ? <Loader/> : 
 			<Feed>
 		   		<Account href="https://www.instagram.com/carlosshb98/" target="_blank">@carlosshb98</Account>
 		   		<Grid>
