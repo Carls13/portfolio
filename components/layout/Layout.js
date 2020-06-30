@@ -123,7 +123,7 @@ class Layout extends React.Component{
         <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet"></link>
 			</Head>
   			<Header/>
-  			   { loading ? <Spinner/> : children }
+  			   { loading ? <Loader/> : children }
         <Footer/>
 		</div>
   )}
